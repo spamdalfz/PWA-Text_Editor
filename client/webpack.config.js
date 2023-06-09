@@ -20,12 +20,13 @@ module.exports = () => {
     plugins: [
       // Webpack plugin that generates html file and injects bundles
       new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, 'index.html'),
+        template: './index.html',
+        title: 'JATE'
       }),
       // Injects custom servie worker
       new InjectManifest({
         swSrc: '/src-sw.js',
-        swDest: 'service-worker.js',
+        swDest: 'src-sw.js',
       }),
       new WebpackPwaManifest({
         fingerprints: false,

@@ -12,21 +12,26 @@ const initdb = async () =>
     },
   });
 
-// Adds the given content to the database
 export const putDb = async (content) => {
-  const db = await initdb();
-  const tx = db.transaction('jate', 'readwrite');
-  tx.store.put({ content });
-  await tx.done;
+  console.log('PUT to the database');
+  const contactDb = await openDB('jate', 1);
+  const tx = contactDb.transaction('jate', 'readwrite');
+  const store = tx.objectStore('jate');
+  const request = store.put({ id: 1, value: content });
+  const result = await request;
+  console.log('🚀 - data saved to the database', result);
 };
 
-// Retrieves all the content from the database
+// logic for a method that gets all the content from the database
 export const getDb = async () => {
-  const db = await initdb();
-  const tx = db.transaction('jate', 'readonly');
-  const content = await tx.store.getAll();
-  await tx.done;
-  return content;
+  console.log('GET from the database');
+  const contactDb = await openDB('jate', 1);
+  const tx = contactDb.transaction('jate', 'readonly');
+  const store = tx.objectStore('jate');
+  const request = store.getAll();
+  const result = await request;
+  console.log('result.value', result);
+  return result?.value;
 };
 
 initdb();
