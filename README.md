@@ -32,7 +32,7 @@ Once you have successfully installed and started the application, follow these s
 
 ### 1. Using the Text Editor:
 
-- Open the application in your browser. The Text Editor application should load immediately and an IndexedDB database storage is automatically created in the background.
+- Open the application in your browser after comepleting the installation or click [here](https://edittextapp.herokuapp.com/) to run the live app. The Text Editor application should load immediately and an IndexedDB database storage is automatically created in the background. 
 
 - To create a new document, simply start typing in the editor. As you enter content and click off of the DOM window, the content will be auto-saved to IndexedDB.
 
