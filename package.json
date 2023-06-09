@@ -11,6 +11,10 @@
     "install": "cd server && npm i && cd ../client && npm i",
     "client": "cd client && npm start"
   },
+  "engines": {
+    "node": "18.x",
+    "npm": "9.x"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
